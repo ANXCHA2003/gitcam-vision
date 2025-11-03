@@ -1,0 +1,16 @@
+# ไหล์ Python ที่จะถูกละเว้นโดย track
+_pycache__/
+*.pyc
+
+# โฟลเดอร์ที VS Code / Virtual Env
+.vscode/
+.venv/
+env/
+venv/
+
+# ไฟล์ระบบ
+.DS_Store
+Thumbs.db
+
+# Environment variables (ถ้ามี)
+.env
