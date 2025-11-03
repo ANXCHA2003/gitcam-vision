@@ -1,4 +1,7 @@
+from datetime import datetime
 import cv2
+import os
+
 
 def main():
     # โหลดโมเดล Haar Cascade จาก OpenCV โดยตรง
@@ -9,15 +12,20 @@ def main():
     # เปิดกล้อง
     cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
     if not cap.isOpened():
-        print("❌ ไม่สามารถเปิดกล้องได้")
+        print("ไม่สามารถเปิดกล้องได้")
         return
-
-    print("ระบบตรวจจับใบหน้าเริ่มทำงาน (กด '0' เพื่อออก)")
+    
+    saved_once = False
+    os.makedirs("snapshots", exist_ok=True)
 
     while True:
         ret, frame = cap.read()
-        if not ret:
-            break
+        if ret and not saved_once:
+            ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+            path = f"snapshots/snapshot_{ts}.png"
+            cv2.imwrite(path, frame)
+            print(f"บันทึกภาพที่ {path}")
+            saved_once = True
 
         # แปลงภาพเป็นขาวดำ
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
