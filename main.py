@@ -32,6 +32,9 @@ def main():
 
         # ตรวจจับใบหน้า
         faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)
+        if len(faces) == 0:
+            cv2.putText(frame, "No faces detected", (20, 40),
+                        cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
 
         # วาดกรอบรอบใบหน้า
         for (x, y, w, h) in faces:
