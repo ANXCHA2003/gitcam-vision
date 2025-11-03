@@ -1,10 +1,10 @@
-# GitCam: Learn Git Graph with Camera Vision
+# GitCam-FaceDetect
 
-โปรเจกต์ฝึกการใช้ **PyThon + OpenCV** ร่วมกับ **Git Graph**
-เพื่อเรียนรู้การพัฒนาแบบมีการติดตามเวอร์ชันของโค้ดจริง
+ระบบตรวจจับใบหน้าแบบเรียลไทม์ด้วย OpenCV  
+แสดงกรอบสีเขียวรอบใบหน้าและจำนวนใบหน้าที่ตรวจพบ
 
-## การรันโปรเจกต์
+## วิธีใช้งาน
 
 ```bash
-pip install -r requiremets.txt
+pip install -r requirements.txt
 python main.py
