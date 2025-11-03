@@ -11,6 +11,6 @@ venv/
 # ไฟล์ระบบ
 .DS_Store
 Thumbs.db
-
+snapshots/
 # Environment variables (ถ้ามี)
 .env
